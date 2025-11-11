@@ -9,9 +9,12 @@
     "build": "node ace build",
     "dev": "node ace serve --hmr",
     "test": "node ace test",
+    "test:watch": "node ace test --watch",
     "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "npm run format && npm run lint:fix"
   },
   "imports": {
     "#controllers/*": "./app/controllers/*.js",
@@ -36,8 +39,10 @@
     "@adonisjs/eslint-config": "^2.0.0",
     "@adonisjs/prettier-config": "^1.4.4",
     "@adonisjs/tsconfig": "^1.4.0",
+    "@faker-js/faker": "^10.1.0",
     "@japa/api-client": "^3.1.0",
     "@japa/assert": "^4.0.1",
+    "@japa/expect": "^3.0.6",
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
     "@swc/core": "1.11.24",
