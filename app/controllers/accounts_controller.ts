@@ -8,6 +8,7 @@ export default class AccountsController {
     const { email, password, name } = await createPostValidator.validate(data)
 
     const createdAccount = await Account.create({ email, password, name })
-    return response.created(createdAccount)
+    const token = await Account.accessTokens.create(createdAccount)
+    return response.created(token)
   }
 }
