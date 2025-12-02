@@ -13,8 +13,6 @@ test.group('Accounts create (http request)', () => {
       email,
     })
 
-    console.log(response.body())
-
     expect(response.status()).toBe(201)
     expect(response.body()).toEqual(
       expect.objectContaining({
