@@ -7,3 +7,10 @@ export const createPostValidator = vine.compile(
     password: vine.string(),
   })
 )
+
+export const createSessionValidator = vine.compile(
+  vine.object({
+    email: vine.string().email(),
+    password: vine.string(),
+  })
+)
